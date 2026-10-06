@@ -1,0 +1,1217 @@
+[gd_scene format=3 uid="uid://crxipkmgjy70v"]
+
+[ext_resource type="Script" uid="uid://dwrbxshrg74fs" path="res://Scripts/Chair/Chair.gd" id="1_auwcy"]
+[ext_resource type="PackedScene" uid="uid://dsdamqcmxocjj" path="res://Character.tscn" id="1_monv1"]
+[ext_resource type="Script" uid="uid://bme1fqtjvcqcf" path="res://Scripts/Chair/Seat.gd" id="3_dejvh"]
+[ext_resource type="Texture2D" uid="uid://c0fucoesw5rpt" path="res://Images/office_chair_down.png" id="3_monv1"]
+[ext_resource type="Script" uid="uid://sey23qvclbok" path="res://Scripts/Chair/Seats.gd" id="4_885vn"]
+[ext_resource type="Script" uid="uid://bums31d2uq5op" path="res://Scripts/Interaction.gd" id="5_22tyq"]
+[ext_resource type="Texture2D" uid="uid://ck23c6cxfgvjh" path="res://assets/chair_icon.png" id="6_monv1"]
+[ext_resource type="Script" uid="uid://dg1l0a7r16hky" path="res://Scripts/click_area.gd" id="8_hfh3i"]
+[ext_resource type="Script" uid="uid://5i5jdi0l1ajy" path="res://Scripts/Blocker.gd" id="9_iiv5m"]
+[ext_resource type="Texture2D" uid="uid://boubiy2ua5qmo" path="res://Images/office_table_1.png" id="10_iiv5m"]
+[ext_resource type="Texture2D" uid="uid://brobhujntsy2e" path="res://Images/office_chair_up.png" id="10_k600g"]
+[ext_resource type="Texture2D" uid="uid://cjj71y8kh0ayk" path="res://Images/office_table_2.png" id="11_naxq1"]
+[ext_resource type="Texture2D" uid="uid://gmo5fgjj23fe" path="res://Images/table.png" id="13_43i68"]
+[ext_resource type="Texture2D" uid="uid://b7mq7l0x0kfne" path="res://Images/plant.png" id="14_kjhbo"]
+[ext_resource type="Texture2D" uid="uid://cjhvn8gh1sbva" path="res://Images/air_conditioner.png" id="15_4fm71"]
+[ext_resource type="Texture2D" uid="uid://c0a0otp8di7q7" path="res://Images/certificate.png" id="16_grpir"]
+[ext_resource type="Texture2D" uid="uid://brpvriqu3vsfd" path="res://Images/white_board.png" id="17_3080y"]
+[ext_resource type="Texture2D" uid="uid://xyihc8xnwhm" path="res://Images/shelf.png" id="18_b6brs"]
+[ext_resource type="Texture2D" uid="uid://cvfwpi52bpy8v" path="res://Images/couch.png" id="19_3080y"]
+[ext_resource type="Texture2D" uid="uid://c1tdtpmur1d4h" path="res://Images/office_chair_right.png" id="20_b6brs"]
+[ext_resource type="Texture2D" uid="uid://c8n6bw7equ0pg" path="res://Images/water_dispenser.png" id="21_kfihx"]
+[ext_resource type="Texture2D" uid="uid://bxxrlvo1pudyx" path="res://Images/bin.png" id="22_qrm43"]
+[ext_resource type="Texture2D" uid="uid://bd0ois6smmvre" path="res://assets/eye_icon.png" id="23_rmxrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdu0s"]
+size = Vector2(72, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfh3i"]
+size = Vector2(32, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb21o"]
+size = Vector2(32, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lc2k"]
+size = Vector2(72, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiv5m"]
+size = Vector2(106, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43i68"]
+size = Vector2(50, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imy08"]
+size = Vector2(32, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfihx"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu4is"]
+size = Vector2(62, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1348"]
+size = Vector2(102, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3080y"]
+size = Vector2(32, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrm43"]
+size = Vector2(24, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmxrq"]
+size = Vector2(44, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v01q6"]
+size = Vector2(28, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwx22"]
+size = Vector2(24, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yeb4"]
+size = Vector2(60, 78)
+
+[node name="Node2D" type="Node2D" unique_id=566693980]
+y_sort_enabled = true
+
+[node name="Character" parent="." unique_id=1646261196 instance=ExtResource("1_monv1")]
+position = Vector2(162, 230)
+
+[node name="Chair" type="Node2D" parent="." unique_id=2054420382 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(333, 176)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair" unique_id=683726871]
+position = Vector2(0, -4)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair" unique_id=1047896789 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair/Seats" unique_id=1889778720 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair/Seats/Seat" unique_id=2281512]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair/Seats/Seat" unique_id=1111010816]
+position = Vector2(0, -30)
+
+[node name="Interaction" type="Area2D" parent="Chair" unique_id=489756884 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair/Interaction" unique_id=1812321850]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair/Interaction" unique_id=160740823]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair/Interaction" unique_id=1811175171]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair/Interaction/ClickArea" unique_id=693194573]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair" unique_id=897126065]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair/Blocker" unique_id=1056381937]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair4" type="Node2D" parent="." unique_id=1373395288 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(297, 362)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair4" unique_id=847997116]
+position = Vector2(0, -4)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair4" unique_id=117327286 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair4/Seats" unique_id=877287287 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair4/Seats/Seat" unique_id=764325601]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair4/Seats/Seat" unique_id=518293362]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair4" unique_id=145931597 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair4/Interaction" unique_id=2036612583]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair4/Interaction" unique_id=388094224]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair4/Interaction" unique_id=1399882544]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair4/Interaction/ClickArea" unique_id=224669371]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair4" unique_id=459214868]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair4/Blocker" unique_id=1112705314]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair8" type="Node2D" parent="." unique_id=1055111829 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(297, 484)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair8" unique_id=1938178301]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair8" unique_id=1448162418 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair8/Seats" unique_id=301292264 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair8/Seats/Seat" unique_id=201256622]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair8/Seats/Seat" unique_id=282006697]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair8" unique_id=1437388247 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair8/Interaction" unique_id=57739474]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair8/Interaction" unique_id=1294366158]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair8/Interaction" unique_id=498284904]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair8/Interaction/ClickArea" unique_id=1488619439]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair8" unique_id=1294107629]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair8/Blocker" unique_id=40094564]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair14" type="Node2D" parent="." unique_id=1830817194 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(397, 484)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair14" unique_id=981901043]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair14" unique_id=1898328459 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair14/Seats" unique_id=1075999604 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair14/Seats/Seat" unique_id=1139642648]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair14/Seats/Seat" unique_id=2139308537]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair14" unique_id=1867316213 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair14/Interaction" unique_id=1076122141]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair14/Interaction" unique_id=1409849124]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair14/Interaction" unique_id=818400130]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair14/Interaction/ClickArea" unique_id=1711516261]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair14" unique_id=1129202220]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair14/Blocker" unique_id=2001319051]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair15" type="Node2D" parent="." unique_id=279411022 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(497, 484)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair15" unique_id=800592746]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair15" unique_id=374160689 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair15/Seats" unique_id=27294220 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair15/Seats/Seat" unique_id=957015902]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair15/Seats/Seat" unique_id=796803481]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair15" unique_id=654500600 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair15/Interaction" unique_id=1800690462]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair15/Interaction" unique_id=453683777]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair15/Interaction" unique_id=326771444]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair15/Interaction/ClickArea" unique_id=1197303466]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair15" unique_id=1062329922]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair15/Blocker" unique_id=1444122686]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair16" type="Node2D" parent="." unique_id=496143732 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(597, 484)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair16" unique_id=352404708]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair16" unique_id=86564457 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair16/Seats" unique_id=1395975460 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair16/Seats/Seat" unique_id=882620534]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair16/Seats/Seat" unique_id=1365688165]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair16" unique_id=1997036666 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair16/Interaction" unique_id=1131370141]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair16/Interaction" unique_id=316137947]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair16/Interaction" unique_id=1532958038]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair16/Interaction/ClickArea" unique_id=1889419346]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair16" unique_id=946184072]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair16/Blocker" unique_id=316666715]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair9" type="Node2D" parent="." unique_id=1569664174 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(331, 298)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair9" unique_id=1547169049]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair9" unique_id=1886204382 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair9/Seats" unique_id=575576609 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair9/Seats/Seat" unique_id=84570885]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair9/Seats/Seat" unique_id=839900225]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair9" unique_id=1435255650 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair9/Interaction" unique_id=1564184866]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair9/Interaction" unique_id=913676646]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair9/Interaction" unique_id=481418789]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair9/Interaction/ClickArea" unique_id=2089614401]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair9" unique_id=130800138]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair9/Blocker" unique_id=757715002]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair10" type="Node2D" parent="." unique_id=1120808876 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(431, 298)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair10" unique_id=400048602]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair10" unique_id=1940634650 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair10/Seats" unique_id=112828277 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair10/Seats/Seat" unique_id=891782728]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair10/Seats/Seat" unique_id=2070327551]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair10" unique_id=740287683 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair10/Interaction" unique_id=438719842]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair10/Interaction" unique_id=1408441995]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair10/Interaction" unique_id=1692110509]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair10/Interaction/ClickArea" unique_id=233981081]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair10" unique_id=1230870249]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair10/Blocker" unique_id=36510849]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair11" type="Node2D" parent="." unique_id=1820821718 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(531, 298)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair11" unique_id=1005299008]
+position = Vector2(0, -24)
+texture = ExtResource("10_k600g")
+
+[node name="Seats" type="Node2D" parent="Chair11" unique_id=1184227794 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair11/Seats" unique_id=1561547286 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_up"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair11/Seats/Seat" unique_id=30109707]
+position = Vector2(0, -14)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair11/Seats/Seat" unique_id=1048073811]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair11" unique_id=2144129742 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair11/Interaction" unique_id=1162850818]
+position = Vector2(0, -51)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair11/Interaction" unique_id=804128078]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_3lc2k")
+
+[node name="ClickArea" type="Area2D" parent="Chair11/Interaction" unique_id=640471394]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair11/Interaction/ClickArea" unique_id=1947245609]
+position = Vector2(0, -63)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair11" unique_id=2096401920]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair11/Blocker" unique_id=1323877151]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair2" type="Node2D" parent="." unique_id=1003331142 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(433, 174)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair2" unique_id=720015543]
+position = Vector2(0, -2)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair2" unique_id=618568547 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair2/Seats" unique_id=1008468032 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair2/Seats/Seat" unique_id=405445217]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair2/Seats/Seat" unique_id=38826602]
+position = Vector2(0, -30)
+
+[node name="Interaction" type="Area2D" parent="Chair2" unique_id=1285574474 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair2/Interaction" unique_id=1055281475]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair2/Interaction" unique_id=652986291]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair2/Interaction" unique_id=431758094]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair2/Interaction/ClickArea" unique_id=1712109565]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair2" unique_id=748210966]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair2/Blocker" unique_id=795545912]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair3" type="Node2D" parent="." unique_id=587849582 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(533, 174)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair3" unique_id=1030378529]
+position = Vector2(0, -2)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair3" unique_id=1429097820 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair3/Seats" unique_id=1044114120 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair3/Seats/Seat" unique_id=165925564]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair3/Seats/Seat" unique_id=697807396]
+position = Vector2(0, -30)
+
+[node name="Interaction" type="Area2D" parent="Chair3" unique_id=132688084 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair3/Interaction" unique_id=793197257]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair3/Interaction" unique_id=936220556]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair3/Interaction" unique_id=2096506095]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair3/Interaction/ClickArea" unique_id=2115448025]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair3" unique_id=1141991097]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair3/Blocker" unique_id=1213267461]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair5" type="Node2D" parent="." unique_id=1733508965 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(397, 363)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair5" unique_id=2016056321]
+position = Vector2(0, -4)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair5" unique_id=1194228758 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair5/Seats" unique_id=1916628384 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair5/Seats/Seat" unique_id=149652464]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair5/Seats/Seat" unique_id=1231815224]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair5" unique_id=833615273 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair5/Interaction" unique_id=1829813126]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair5/Interaction" unique_id=173108232]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair5/Interaction" unique_id=1855777181]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair5/Interaction/ClickArea" unique_id=1245121131]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair5" unique_id=121931138]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair5/Blocker" unique_id=1532906425]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair6" type="Node2D" parent="." unique_id=483482301 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(497, 362)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair6" unique_id=2089843637]
+position = Vector2(0, -4)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair6" unique_id=2143743240 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair6/Seats" unique_id=573438252 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair6/Seats/Seat" unique_id=1778738477]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair6/Seats/Seat" unique_id=1543294320]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair6" unique_id=1413893271 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair6/Interaction" unique_id=1519974594]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair6/Interaction" unique_id=263242336]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair6/Interaction" unique_id=1477431065]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair6/Interaction/ClickArea" unique_id=1579766539]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair6" unique_id=733552799]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair6/Blocker" unique_id=299580590]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Chair7" type="Node2D" parent="." unique_id=1015861946 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(597, 362)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair7" unique_id=1290477399]
+position = Vector2(0, -4)
+texture = ExtResource("3_monv1")
+
+[node name="Seats" type="Node2D" parent="Chair7" unique_id=307766133 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair7/Seats" unique_id=837799772 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+_animation = "idle_down"
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair7/Seats/Seat" unique_id=1689500863]
+position = Vector2(0, 18)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair7/Seats/Seat" unique_id=1047675758]
+position = Vector2(-67, -40)
+
+[node name="Interaction" type="Area2D" parent="Chair7" unique_id=1503578910 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("Sprite2D")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair7/Interaction" unique_id=234804091]
+position = Vector2(0, -36)
+texture = ExtResource("6_monv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair7/Interaction" unique_id=1541077529]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdu0s")
+
+[node name="ClickArea" type="Area2D" parent="Chair7/Interaction" unique_id=1942415050]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair7/Interaction/ClickArea" unique_id=1315641867]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfh3i")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair7" unique_id=34312293]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair7/Blocker" unique_id=440034194]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gb21o")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=316409516]
+position = Vector2(333, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1939232456]
+position = Vector2(0, 3)
+texture = ExtResource("10_iiv5m")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D" unique_id=1086364001]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Blocker" unique_id=134638673]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=568243971]
+position = Vector2(433, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2" unique_id=78568166]
+position = Vector2(0, 3)
+texture = ExtResource("10_iiv5m")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D2" unique_id=1269364804]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Blocker" unique_id=1716520305]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D3" type="Node2D" parent="." unique_id=1447686520]
+position = Vector2(533, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D3" unique_id=1631674318]
+position = Vector2(0, 3)
+texture = ExtResource("10_iiv5m")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D3" unique_id=758970942]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Blocker" unique_id=1898388428]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D4" type="Node2D" parent="." unique_id=1398444953]
+position = Vector2(297, 410)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4" unique_id=544910666]
+position = Vector2(0, 3)
+texture = ExtResource("11_naxq1")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D4" unique_id=143997137]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/Blocker" unique_id=481929137]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D5" type="Node2D" parent="." unique_id=1175793453]
+position = Vector2(397, 410)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D5" unique_id=2082933225]
+position = Vector2(0, 3)
+texture = ExtResource("11_naxq1")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D5" unique_id=2034286818]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D5/Blocker" unique_id=1679899615]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D6" type="Node2D" parent="." unique_id=1377821239]
+position = Vector2(497, 410)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D6" unique_id=119519990]
+position = Vector2(0, 3)
+texture = ExtResource("11_naxq1")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D6" unique_id=782906134]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D6/Blocker" unique_id=1883221246]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Node2D7" type="Node2D" parent="." unique_id=687426080]
+position = Vector2(597, 410)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D7" unique_id=1569858722]
+position = Vector2(0, 3)
+texture = ExtResource("11_naxq1")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D7" unique_id=1110310251]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D7/Blocker" unique_id=1571171382]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_iiv5m")
+
+[node name="Table" type="Node2D" parent="." unique_id=887956325]
+position = Vector2(619, 251)
+
+[node name="Sprite2D" type="Sprite2D" parent="Table" unique_id=1775265469]
+texture = ExtResource("13_43i68")
+
+[node name="Blocker" type="StaticBody2D" parent="Table" unique_id=1745738759]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Blocker" unique_id=1033562472]
+shape = SubResource("RectangleShape2D_43i68")
+
+[node name="Node2D8" type="Node2D" parent="." unique_id=422386210]
+position = Vector2(700, 439)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D8" unique_id=548249989]
+position = Vector2(0, -28)
+texture = ExtResource("14_kjhbo")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D8" unique_id=880945206]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D8/Blocker" unique_id=16080231]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_imy08")
+
+[node name="AirConditioner" type="Sprite2D" parent="." unique_id=58769175]
+position = Vector2(275, 27)
+texture = ExtResource("15_4fm71")
+
+[node name="Certificate" type="Sprite2D" parent="." unique_id=1710287474]
+position = Vector2(411, 64)
+texture = ExtResource("16_grpir")
+
+[node name="Node2D9" type="Node2D" parent="." unique_id=938700912]
+position = Vector2(534, 80)
+
+[node name="Shelf" type="Sprite2D" parent="Node2D9" unique_id=1951861492]
+texture = ExtResource("18_b6brs")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D9" unique_id=571064879]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D9/Blocker" unique_id=2058067701]
+shape = SubResource("RectangleShape2D_kfihx")
+
+[node name="Chair12" type="Node2D" parent="." unique_id=53275891 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(277, 539)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair12" unique_id=1380436805]
+position = Vector2(1, 0)
+texture = ExtResource("19_3080y")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair12" unique_id=910347271]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair12/Blocker" unique_id=685660721]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_bu4is")
+
+[node name="Seats" type="Node2D" parent="Chair12" unique_id=1568438214 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair12/Seats" unique_id=1106678784 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair12/Seats/Seat" unique_id=1477057613]
+position = Vector2(1, 22)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair12/Seats/Seat" unique_id=403936325]
+position = Vector2(1, 42)
+
+[node name="Interaction" type="Area2D" parent="Chair12" unique_id=249818283 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("ChairIcon")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair12/Interaction" unique_id=1321093007]
+position = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_s1348")
+
+[node name="ChairIcon" type="Sprite2D" parent="Chair12/Interaction" unique_id=460976382]
+position = Vector2(0, -32)
+texture = ExtResource("6_monv1")
+
+[node name="ClickArea" type="Area2D" parent="Chair12/Interaction" unique_id=815535218]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair12/Interaction/ClickArea" unique_id=968692418]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_3080y")
+
+[node name="Chair13" type="Node2D" parent="." unique_id=722117473 node_paths=PackedStringArray("_interaction", "_seats")]
+position = Vector2(404, 550)
+script = ExtResource("1_auwcy")
+_interaction = NodePath("Interaction")
+_seats = NodePath("Seats")
+metadata/_custom_type_script = "uid://dwrbxshrg74fs"
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair13" unique_id=1712742848]
+position = Vector2(1, 0)
+texture = ExtResource("20_b6brs")
+
+[node name="Blocker" type="StaticBody2D" parent="Chair13" unique_id=1052702137]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair13/Blocker" unique_id=1043044046]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_qrm43")
+
+[node name="Seats" type="Node2D" parent="Chair13" unique_id=1727593672 node_paths=PackedStringArray("_seats")]
+script = ExtResource("4_885vn")
+_seats = [NodePath("Seat")]
+metadata/_custom_type_script = "uid://sey23qvclbok"
+
+[node name="Seat" type="Node2D" parent="Chair13/Seats" unique_id=1946518470 node_paths=PackedStringArray("_sit_position", "_exit_postion")]
+script = ExtResource("3_dejvh")
+_sit_position = NodePath("SitPosition")
+_exit_postion = NodePath("ExitPosition")
+metadata/_custom_type_script = "uid://bme1fqtjvcqcf"
+
+[node name="SitPosition" type="Marker2D" parent="Chair13/Seats/Seat" unique_id=143516821]
+position = Vector2(1, 22)
+
+[node name="ExitPosition" type="Marker2D" parent="Chair13/Seats/Seat" unique_id=1550107248]
+position = Vector2(1, 42)
+
+[node name="Interaction" type="Area2D" parent="Chair13" unique_id=1731676796 node_paths=PackedStringArray("_icon", "_click_area")]
+script = ExtResource("5_22tyq")
+_icon = NodePath("ChairIcon")
+_click_area = NodePath("ClickArea")
+metadata/_custom_type_script = "uid://bums31d2uq5op"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair13/Interaction" unique_id=891388883]
+position = Vector2(-9, 10)
+shape = SubResource("RectangleShape2D_rmxrq")
+
+[node name="ChairIcon" type="Sprite2D" parent="Chair13/Interaction" unique_id=958498289]
+position = Vector2(0, -32)
+texture = ExtResource("6_monv1")
+
+[node name="ClickArea" type="Area2D" parent="Chair13/Interaction" unique_id=1337531610]
+script = ExtResource("8_hfh3i")
+metadata/_custom_type_script = "uid://dg1l0a7r16hky"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair13/Interaction/ClickArea" unique_id=187510782]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_3080y")
+
+[node name="Node2D11" type="Node2D" parent="." unique_id=1668359530]
+position = Vector2(669, 38)
+
+[node name="WaterDispenser" type="Sprite2D" parent="Node2D11" unique_id=1817253681]
+texture = ExtResource("21_kfihx")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D11" unique_id=818874644]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D11/Blocker" unique_id=737921561]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_v01q6")
+
+[node name="Node2D12" type="Node2D" parent="." unique_id=477131506]
+position = Vector2(359, 538)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D12" unique_id=1777040741]
+texture = ExtResource("22_qrm43")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D12" unique_id=1344997442]
+script = ExtResource("9_iiv5m")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D12/Blocker" unique_id=772470605]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_iwx22")
+
+[node name="Node2D13" type="Node2D" parent="." unique_id=90477811]
+position = Vector2(465, 75)
+
+[node name="WhiteBoard2" type="Sprite2D" parent="Node2D13" unique_id=835793544]
+texture = ExtResource("17_3080y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D13" unique_id=240599296]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_2yeb4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D13" unique_id=262234350]
+position = Vector2(0, -31)
+texture = ExtResource("23_rmxrq")

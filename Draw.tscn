@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8yae25xem88m"]
+
+[ext_resource type="Script" uid="uid://bdjfccw2ordgo" path="res://Draw.gd" id="1_p665w"]
+
+[node name="Control" type="Control" unique_id=783177874 node_paths=PackedStringArray("multiplayer_spawner")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p665w")
+multiplayer_spawner = NodePath("MultiplayerSpawner")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2096412758]
+spawn_path = NodePath("..")
