@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cvd68f15rjthf"]
+
+[ext_resource type="Texture2D" uid="uid://ctcinplv5uua" path="res://Images/shooting_target.png" id="1_6byud"]
+[ext_resource type="Script" uid="uid://5i5jdi0l1ajy" path="res://Scripts/Blocker.gd" id="2_gqj5f"]
+[ext_resource type="Texture2D" uid="uid://ckrx4rj62ok76" path="res://Images/shooting_target_2.png" id="3_cs5tf"]
+[ext_resource type="Texture2D" uid="uid://ctgdyxlgukugw" path="res://Images/shooting_target_3.png" id="4_h402b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqj5f"]
+size = Vector2(32, 44)
+
+[node name="Node2D" type="Node2D" unique_id=1858989890]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1547615331]
+position = Vector2(20, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=2041276164]
+texture = ExtResource("1_6byud")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D" unique_id=1607321293]
+script = ExtResource("2_gqj5f")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Blocker" unique_id=663934974]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_gqj5f")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1430965558]
+position = Vector2(54, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2" unique_id=1494089470]
+texture = ExtResource("3_cs5tf")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D2" unique_id=2134660310]
+script = ExtResource("2_gqj5f")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Blocker" unique_id=103849816]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_gqj5f")
+
+[node name="Node2D3" type="Node2D" parent="." unique_id=1752122398]
+position = Vector2(88, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D3" unique_id=2014162975]
+texture = ExtResource("4_h402b")
+
+[node name="Blocker" type="StaticBody2D" parent="Node2D3" unique_id=1972426397]
+script = ExtResource("2_gqj5f")
+metadata/_custom_type_script = "uid://5i5jdi0l1ajy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Blocker" unique_id=533916606]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_gqj5f")

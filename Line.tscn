@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://doe8q3evrbbil"]
+
+[ext_resource type="Script" uid="uid://0x0gd8yx0rrf" path="res://line.gd" id="1_0lsht"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0lsht"]
+properties/0/path = NodePath(".:brush_color")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:brush_width")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:points")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Node2D" type="Node2D" unique_id=732910241]
+script = ExtResource("1_0lsht")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=959184496]
+replication_config = SubResource("SceneReplicationConfig_0lsht")

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://lavb3d4kd717"]
+
+[ext_resource type="Texture2D" uid="uid://ufa8g8bg008t" path="res://assets/container_2.png" id="1_cor1f"]
+[ext_resource type="Texture2D" uid="uid://bytbdo0hcochm" path="res://assets/head.png" id="2_cor1f"]
+[ext_resource type="Texture2D" uid="uid://bs18qgwt5skaa" path="res://assets/clock.png" id="3_jf511"]
+[ext_resource type="Texture2D" uid="uid://skqu6yo0412w" path="res://assets/cursors/coin.png" id="4_0wv8u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1348"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_cor1f")
+texture_margin_left = 8.0
+texture_margin_top = 10.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(24, 22, 48, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1348"]
+atlas = ExtResource("3_jf511")
+region = Rect2(9, 9, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdu0s"]
+atlas = ExtResource("4_0wv8u")
+region = Rect2(9, 9, 14, 14)
+
+[node name="Control" type="Control" unique_id=1992813606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1966901618]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 145.0
+offset_bottom = 69.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_s1348")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1796721641]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=77341985]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_cor1f")
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer" unique_id=287114416]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=873212602]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=786631324]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=807790552]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_s1348")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1454997480]
+layout_mode = 2
+text = "15:00"
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=21641879]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=449843370]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1904472688]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_tdu0s")
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=744253128]
+layout_mode = 2
+text = "1200"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1395605150]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

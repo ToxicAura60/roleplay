@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b8db061nmnbhw"]
+
+[ext_resource type="Script" uid="uid://ckream8j36ri" path="res://assets/Piano/piano.gd" id="1_ia5q2"]
+[ext_resource type="Texture2D" uid="uid://bo1ahl5g7gwx" path="res://assets/Piano/piano_key_black.png" id="2_y5wr2"]
+[ext_resource type="Texture2D" uid="uid://wowgsyjfbluh" path="res://assets/Piano/piano_key_black_pressed.png" id="3_xwvvo"]
+[ext_resource type="Texture2D" uid="uid://be401lidlokm7" path="res://assets/Piano/piano_key_white.png" id="4_cnmtt"]
+[ext_resource type="Texture2D" uid="uid://mxucr28j3yqf" path="res://assets/Piano/piano_key_white_pressed.png" id="5_e7nv2"]
+
+[node name="Node2D" type="Node2D" unique_id=2132500173]
+script = ExtResource("1_ia5q2")
+black_key_texture = ExtResource("2_y5wr2")
+black_key_pressed_texture = ExtResource("3_xwvvo")
+white_key_texture = ExtResource("4_cnmtt")
+white_key_pressed_texture = ExtResource("5_e7nv2")
+
+[node name="WhiteKeys" type="HBoxContainer" parent="." unique_id=1757770378]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BlackKeys" type="Control" parent="." unique_id=993863091]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
